@@ -1,8 +1,22 @@
-$myColor : salmon;
+$myColor : gray; // buat variabel
+@mixin tulisan($color: pink){ // buat style yg bisa dipanggil lagi, bisa pake parameter
+    font-family: 'Courier New', Courier, monospace;
+    background-color: $color;
+    padding: 10px;;
+}
 
-header {
+header { // contoh nesting
     background-color: lightblue;
     h1 {
         color: $myColor;
     }
+}
+
+p {
+    background-color: pink;
+}
+
+ul li, p {
+    @include tulisan(rgb(173, 230, 178)); //harus pake () kyk function
+    color: red;
 }
